@@ -33,6 +33,28 @@
                         echo "<p>Error deleting record: " . mysqli_error($conn) . "</p>";
                      }
             }
+         if(isset($_POST['subUpdate']))
+         {
+            $id = $_POST['id'];
+            $code = $_POST['code'];
+            $description = $_POST['description'];
+            $address = $_POST['address'];
+
+            $sql_update = "UPDATE school SET code='$code'",
+                            description='$description';
+                            address='$address';
+                            WHERE id='$id';
+            if (mysqli_query($conn, $sql_update))
+            {
+                echo "Record update Sucessfully";
+                header("Loation: index.php");
+            }
+         }   
+         else
+         {
+            echo "Error updating record: " . mysqli_error($conn);
+         }
+        
 ?>
 </body>
 </html>
