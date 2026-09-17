@@ -49,12 +49,12 @@
                 echo "Record update Sucessfully";
                 header("Loation: index.php");
             }
-         }   
-         else
-         {
+            
+             else
+            {
             echo "Error updating record: " . mysqli_error($conn);
+            }
          }
-        
 ?>
 </body>
 </html>
